@@ -1,0 +1,24 @@
+import webbrowser
+#Sites
+vt = "https://virustotal.com/gui/domain/"
+us = "https://urlscan.io/domain/"
+mx = "https://mxtoolbox.com/SuperTool.aspx?action=mx%3a"
+uv = "https://www.urlvoid.com/scan/"
+gg = "https://www.google.com/search?q="
+
+
+culprit = input("Enter domain or hostname: ")
+
+
+if "@" in culprit:
+    email = culprit
+    domain = culprit.split("@")[1]
+else:
+    domain = culprit
+
+
+webbrowser.open_new(us + domain)
+webbrowser.open(vt + domain, new = 2)
+webbrowser.open(mx + domain + "&run=toolpage", new = 2)
+webbrowser.open(uv + domain, new = 2)
+webbrowser.open(gg + domain, new = 2)
